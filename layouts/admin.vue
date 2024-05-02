@@ -8,7 +8,7 @@
 
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <a to="/admin/dashboard" class="brand-link text-center">
-          <span class="brand-text font-weight-bold">CMS - ADMINISTRATOR</span>
+          <span class="brand-text font-weight-bold">APLIKASI - SEKOLAH</span>
         </a>
 
         <!-- Sidebar -->
