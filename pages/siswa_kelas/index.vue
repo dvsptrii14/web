@@ -1,15 +1,15 @@
 <template>
     <div class="d-flex justify-content-center align-items-center w-auto bg-success-subtle mx-auto p-">
         <div class="card bg-success-subtle" style="width: 75%;">
-            <h1 class="mx-3 my-3">Data Guru</h1>
-            <nuxt-link to="/guru/create">
-                <button style="border-radius: 10px" class="mx-2 my-3">Input Data Guru</button>
+            <h1 class="mx-3 my-3">Data Siswa Kelas</h1>
+            <nuxt-link to="/siswa_kelas/create">
+                <button style="border-radius: 10px" class="mx-2 my-3">Input Data Siswa Kelas</button>
             </nuxt-link>
 
 <div>
-    <b-table striped hover :items = "setGuru" :fields="field">
+    <b-table striped hover :items = "setSiswa_kelas" :fields="field">
     <template v-slot:cell(action)="row">
-        <b-button :to="{name:'guru-edit-id', params:{id:row.item.id}}">Edit</b-button>
+        <b-button :to="{name:'siswa_kelas-edit-id', params:{id:row.item.id}}">Edit</b-button>
         <b-button @click="hapusData(row.item.id)" variant="danger">Delete</b-button>
     </template>
     </b-table>
@@ -25,10 +25,9 @@ export default {
           
             field:[
                 {key:'no', label:'Nomer'},
-                {key:'nama', label:'Nama Guru'},
-                {key:'alamat', label:'Alamat'},
-                {key:'email', label:'Email'},
-                {key:'telepon', label:'Telepon'},
+                {key:'kelasjurusan_id', label:'Kelas Jurusan Id'},
+                {key:'siswa_id', label:'Siswa id'},
+                {key:'keterangan', label:'Keterangan'},
                 {key:'action', label:'Action'},
             ]
         }
@@ -37,7 +36,7 @@ export default {
     methods:{
         async hapusData(id){
             try{
-                await this.$axios.delete(`/api/web/guru/delete/${id}`);
+                await this.$axios.delete(`/api/web/siswa_kelas/delete/${id}`);
                 alert("data berhasil dihapus");
                 this.$nuxt.refresh()
             }
@@ -49,16 +48,15 @@ export default {
     },
 
     async asyncData({$axios}){
-        const listData = await $axios.$get("/api/web/guru");
-        const getGuru = listData.data;
+        const listData = await $axios.$get("/api/web/siswa_kelas");
+        const getSiswa_kelas = listData.data;
         return{
-            setGuru: getGuru.map((item,i) => ({
+            setSiswa_kelas: getSiswa_kelas.map((item,i) => ({
                 id: item.id,
                 no: i+1,
-                nama: item.nama,
-                alamat: item.alamat,
-                email: item.email,
-                telepon: item.telepon,
+                kelasjurusan_id: item.kelasjurusan_id,
+                siswa_id: item.siswa_id,
+                keterangan: item.keterangan,
             }))
         };
     },

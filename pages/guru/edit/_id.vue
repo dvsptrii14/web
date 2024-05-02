@@ -31,7 +31,7 @@
 <div>
     <b-table striped hover :items = "setGuru" :fields="field">
     <template v-slot:cell(action)="row">
-        <b-button :to="{name:'test-edit-id', params:{id:row.item.id}}">Edit</b-button>
+        <b-button :to="{name:'guru-edit-id', params:{id:row.item.id}}">Edit</b-button>
     </template>
     </b-table>
 </div>
