@@ -10,7 +10,7 @@
     <b-table striped hover :items = "setPenerbit" :fields="field">
     <template v-slot:cell(action)="row">
         <b-button :to="{name:'penerbit-edit-id', params:{id:row.item.id}}">Edit</b-button>
-        <b-button @click="hapusData(row.item.id)" variants="danger">Delete</b-button>
+        <b-button @click="hapusData(row.item.id)" variants="danger">kk</b-button>
     </template>
     </b-table>
     </div>

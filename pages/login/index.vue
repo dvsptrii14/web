@@ -1,94 +1,76 @@
 <template>
-  <div class="card card-outline card-info">
-    <div class="card-header text-center">
-      <nuxt-link to="/" class="h1 font-weight-bold text-dark">CMS</nuxt-link>
-      <div><i>Content Management System</i></div>
+    <div class="body">
+        <div class="login">
+        <div>
+            <img src="../../assets/img/logo.png" alt="gambar1" width="500px">
+        </div>
+        <div class="form" >
+            <p class="katalogin">Log in</p>
+            <table>
+                
+                <tr>
+                   
+                    <td><img src="../../assets/img/user.png" alt=""width="25px"></td>
+                    <td>:</td>
+                    <td><input type="text" placeholder="Username"></td>
+                </tr>
+                <tr>
+                    <td><img src="../../assets/img/lock.png" alt="" width="25px"></td>
+                    <td>:</td>
+                    <td><input type="text" placeholder="password"></td>
+                </tr>
+            </table>
+            <button>konfirmasi</button>
+        </div>
     </div>
-    <div class="card-body">
-      <div v-if="validation.message" class="mt-2">
-        <b-alert show variant="danger">{{ validation.message }}</b-alert>
-      </div>
-      <form @submit.prevent="login">
-        <div class="form-group">
-          <label class="font-weight-bold text-uppercase">Email address</label>
-          <input type="email" v-model="user.email" :class="{ 'is-invalid': validation.email }" class="form-control"
-            placeholder="Masukkan Alamat Email">
-        </div>
-        <div v-if="validation.email" class="mt-2">
-          <b-alert show variant="danger">{{ validation.email[0] }}</b-alert>
-        </div>
-
-        <div class="form-group">
-          <label class="font-weight-bold text-uppercase">Password</label>
-          <input type="password" v-model="user.password" :class="{ 'is-invalid': validation.password }"
-            class="form-control" placeholder="Masukkan Password">
-        </div>
-        <div v-if="validation.password" class="mt-2">
-          <b-alert show variant="danger">{{ validation.password[0] }}</b-alert>
-        </div>
-
-        <button type="submit" class="btn btn-info btn-block">LOGIN</button>
-      </form>
     </div>
-    <!-- /.card-body -->
-  </div>
 </template>
+<style>
+.body{
+    background-color: white;
+    height: 100vh;
+}
+.login{
+    /* border-style: solid;
+    border-color: aqua;
+    padding: 10px;
+    width: fit-content; */
+    display:flex ;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    height: 100%;
+}
+
+.form{
+    background-color: #D8EFE9;
+    padding: 20px;
+    border-radius: 15px;
+}
+.katalogin
+{
+    font-weight: bolder;
+    font-size: 64px;
+}
+input{
+    background-color: transparent;
+    border: none;
+}
+td
+{
+    border-bottom: 2px solid black;
+}
+button{
+    margin: 10px;
+    background-color: #252B3B;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+</style>
 
 <script>
-  export default {
-
-    //layout
-    layout: 'auth',
-
-    //meta
-    head() {
-      return {
-        title: 'Login - SantriKoding.com - Belajar Koding Bahasa Indonesia Terlengkap',
-      }
-    },
-
-    data() {
-      return {
-        //state user
-        user: {
-          email: '',
-          password: '',
-        },
-        //validation
-        validation: []
-      }
-    },
-
-    methods: {
-      async login() {
-
-        await this.$auth.loginWith('local', {
-            data: {
-              email: this.user.email,
-              password: this.user.password
-            }
-          })
-
-          .then(() => {
-
-            //redirect
-            this.$router.push({
-              name: 'admin-dashboard'
-            })
-
-          })
-
-          .catch(error => {
-            //assign validation
-            this.validation = error.response.data
-          })
-      }
-
-    }
-
-  }
+export default{
+    layout: 'empty',
+}
 </script>
-
-<style>
-
-</style>
