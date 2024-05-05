@@ -7,8 +7,8 @@
             <b-img src="https://kotabogor.go.id/uploads/images/logokotabogor.gif?1662972326208" width="70"></b-img>
           </b-col>
           <b-col md="11">
-            <h3 class="font-weight-bold">Master Nuxt App</h3>
-            <p>Selamat Datang di Belajar Bareng</p>
+            <h3 class="font-weight-bold">Aplikasi E-Sekolah</h3>
+            <p>Silahkan Input Data</p>
           </b-col>
         </b-row>
       </b-container>
