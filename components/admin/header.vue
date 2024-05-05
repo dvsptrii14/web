@@ -15,9 +15,10 @@
       <li class="nav-item dropdown pb-2">
         <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
           class="nav-link dropdown-toggle">
-          <img
+          <img src="/assets/css/img/orang.png" style="width: 50px;">
+          <!-- <img
             :src="`https://ui-avatars.com/api/?name=${user.name}&amp;background=4e73df&amp;color=ffffff&amp;size=100`"
-            class="img-circle" style="opacity: .8" width="35" height="35">
+            class="img-circle" style="opacity: .8" width="35" height="35"> -->
           {{ user.name }}
         </a>
         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu" style="left: 0px; right: inherit;">
@@ -29,8 +30,14 @@
 </template>
 
 <script>
+import Header from "@/components/admin/header.vue";
+import Sidebar from "@/components/admin/sidebar.vue";
   export default {
 
+    components: {
+      Header,
+      Sidebar,
+    },
     computed: {
       user() {
         return this.$auth.user

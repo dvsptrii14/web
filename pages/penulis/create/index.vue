@@ -35,8 +35,14 @@
   </template>
   
   <script>
+  import Header from "@/components/admin/header.vue";
+  import Sidebar from "@/components/admin/sidebar.vue";
      export default{
-  
+      
+      components: {
+        Header,
+        Sidebar,
+      },
      data(){
       return{
           formData:{

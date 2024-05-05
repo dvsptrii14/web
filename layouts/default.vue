@@ -11,7 +11,8 @@
 
   </div>
 </template>
-<script>
+
+<!-- <script>
   import Navbar from '@/components/web/navbar.vue'
   import Footer from '@/components/web/footer.vue'
   export default {
@@ -20,7 +21,7 @@
       Footer
     },
   }
-</script>
+</script> -->
 
 <style>
   body {
