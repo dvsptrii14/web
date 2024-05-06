@@ -116,5 +116,9 @@ export default {
     //     "@babel/transform-async-to-generator"
     //   ]
     // },
+  },
+
+  router: {
+    middleware: 'redirect'
   }
 }
